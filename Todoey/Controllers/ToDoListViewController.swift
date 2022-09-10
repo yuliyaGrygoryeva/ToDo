@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TodoListViewController: UITableViewController {
     
@@ -91,15 +92,21 @@ class TodoListViewController: UITableViewController {
     }
     
     func loadItems() {
-        if let data = try? Data(contentsOf: dataFilePath!) {
-            let decoder = PropertyListDecoder()
-            do {
-            itemArray = try decoder.decode([Item].self, from: data)
-            } catch {
-                print("Error decodinf item array, \(error)")
-            }
-                
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        do {
+            itemArray = tr
         }
+        
+        
+//        if let data = try? Data(contentsOf: dataFilePath!) {
+//            let decoder = PropertyListDecoder()
+//            do {
+//            itemArray = try decoder.decode([Item].self, from: data)
+//            } catch {
+//                print("Error decodinf item array, \(error)")
+//            }
+//
+//        }
         
     }
     
