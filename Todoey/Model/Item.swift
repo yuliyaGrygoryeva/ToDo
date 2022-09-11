@@ -8,11 +8,7 @@
 
 import Foundation
 
-class Item: Codable {
+class Item {
     var name: String = ""
     var checkmark: Bool = false
-    
-    func checkmarkIsToggled() {
-        checkmark.toggle()
-    }
 }
